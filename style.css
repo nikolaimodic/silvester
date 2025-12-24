@@ -26,7 +26,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    max-height: 100vh;
     transition: opacity 0.5s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
 }
 
 .countdown {
@@ -36,6 +41,9 @@ body {
     letter-spacing: 0.1em;
     text-align: center;
     font-variant-numeric: tabular-nums;
+    line-height: 1;
+    word-break: keep-all;
+    white-space: nowrap;
 }
 
 .hidden {
@@ -162,8 +170,13 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .countdown-container {
+        padding: 5px;
+    }
+    
     .countdown {
-        font-size: 15vw;
+        font-size: min(14vw, 12vh);
+        letter-spacing: 0.05em;
     }
     
     .gallery {
@@ -191,8 +204,37 @@ body {
 }
 
 @media (max-width: 480px) {
+    .countdown-container {
+        padding: 5px;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
     .countdown {
-        font-size: 18vw;
+        font-size: min(16vw, 14vh);
+        letter-spacing: 0.04em;
+        max-width: calc(100% - 10px);
+        transform: scale(1);
+    }
+    
+    /* Ensure countdown fits in viewport on very small screens */
+    @media (max-height: 700px) {
+        .countdown {
+            font-size: min(14vw, 12vh);
+        }
+    }
+    
+    @media (max-height: 600px) {
+        .countdown {
+            font-size: min(12vw, 10vh);
+        }
+    }
+    
+    @media (max-height: 500px) {
+        .countdown {
+            font-size: min(10vw, 9vh);
+        }
     }
     
     .gallery {
@@ -202,6 +244,17 @@ body {
     
     .gallery-item {
         padding: 10px;
+    }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    .countdown {
+        font-size: min(12vw, 10vh);
+    }
+    
+    .countdown-container {
+        padding: 5px;
     }
 }
 
