@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>???</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="countdown-container" class="countdown-container">
+            <div id="countdown" class="countdown">00:00:00:00</div>
+        </div>
+        
+        <div id="gallery-container" class="gallery-container hidden">
+            <div class="gallery">
+                <div class="gallery-item-wrapper">
+                    <div class="gallery-item" onclick="viewFullImage('images/image1.JPG')">
+                        <img src="images/image1.PNG" alt="Image 1" class="gallery-image">
+                    </div>
+                </div>
+                <div class="gallery-item-wrapper">
+                    <div class="gallery-item" onclick="viewFullImage('images/image2.PNG')">
+                        <img src="images/image2.PNG" alt="Image 2" class="gallery-image">
+                    </div>
+                </div>
+                <div class="gallery-item-wrapper">
+                    <div class="gallery-item" onclick="viewFullImage('images/image3.PNG')">
+                        <img src="images/image3.JPG" alt="Image 3" class="gallery-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Full Image Modal -->
+        <div id="image-modal" class="modal hidden">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="full-image" class="full-image" src="" alt="Full size image">
+            <button class="modal-download-btn" onclick="downloadFromModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
